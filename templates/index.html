@@ -1,0 +1,27 @@
+
+<!-- Nomenclatura abaixo do Jinja - herda o base.html, e ao mesmo tempo passa um parágrafo de volta  -->
+
+{% extends "base.html" %}
+
+{% block content %}
+    <p>Hello, index.html here!</p>
+
+    <!--  recebe as variáveis passadas pelo handler do index. -->
+    <p>{{some_text}}</p>
+    <p>Current year: {{current_year}}</p>
+
+<!--    Note que a sintaxe com duas chaves só é usada para variaveis. Abaixo como funciona para loop e IF -->
+
+    {% if cities %}
+        <p>The cities variable exists.</p>
+    {% else %}
+        <p>There are no cities :(</p>
+    {% endif %}
+
+
+    {% for city in cities %}
+         <p>{{city}}</p>
+    {% endfor %}
+
+{% endblock content %}
+

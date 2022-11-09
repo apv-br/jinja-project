@@ -1,0 +1,29 @@
+<!-- Nomenclatura abaixo do Jinja - herda o base.html, e ao mesmo tempo passa um parágrafo de volta  -->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% if name %}
+        <p>Hello {{name}}!</p>
+    {% endif %}
+
+    <p>More about me :)</p>
+
+    <!-- <form method="post" action="/contact"> -->
+    <form method="post" action="/about-me">
+        <input type="text" name="contact-name" placeholder="Enter your name">
+        <br>
+
+        <input type="email" name="contact-email" placeholder="Enter email address">
+        <br>
+
+        <textarea name="contact-message" placeholder="Enter your message"></textarea>
+        <br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+{% endblock content %}
+
+
